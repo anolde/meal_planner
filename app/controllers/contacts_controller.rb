@@ -10,7 +10,8 @@ class ContactsController < ApplicationController
   end
 
   def index
-    @contacts = current_user.contacts.page(params[:page]).per(10)
+    @q = current_user.contacts.ransack(params[:q])
+    @contacts = @q.result(:distinct => true).includes(:user).page(params[:page]).per(10)
 
     render("contact_templates/index.html.erb")
   end
