@@ -4,6 +4,8 @@ RSpec.describe User, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:compositions) }
+
     it { should have_many(:restaurants) }
 
     it { should have_many(:contacts) }
