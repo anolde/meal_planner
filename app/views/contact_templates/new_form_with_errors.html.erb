@@ -1,0 +1,80 @@
+<!-- Validation failure messages -->
+<% if @contact.present? %>
+  <% if @contact.errors.any? %>
+    <% @contact.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new contact
+</h1>
+
+
+<hr>
+
+<!-- Form contact start -->
+<form action="/create_contact" method="post">
+<!-- Form contact end -->
+
+  <!-- Label and input for first_name start -->
+  <div class="form-group">
+    <label for="first_name">
+      First name
+    </label>
+
+    <!-- Input for first_name start -->
+    <input type="text" id="first_name" name="first_name" class="form-control" value="<%= @contact.first_name %>">
+    <!-- Input for first_name end -->
+  </div>
+  <!-- Label and input for first_name end -->
+
+  <!-- Label and input for last_name start -->
+  <div class="form-group">
+    <label for="last_name">
+      Last name
+    </label>
+
+    <!-- Input for last_name start -->
+    <input type="text" id="last_name" name="last_name" class="form-control" value="<%= @contact.last_name %>">
+    <!-- Input for last_name end -->
+  </div>
+  <!-- Label and input for last_name end -->
+
+  <!-- Label and input for email start -->
+  <div class="form-group">
+    <label for="email">
+      Email
+    </label>
+
+    <!-- Input for email start -->
+    <input type="text" id="email" name="email" class="form-control" value="<%= @contact.email %>">
+    <!-- Input for email end -->
+  </div>
+  <!-- Label and input for email end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @contact.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create contact
+  </button>
+</form>
+
+<hr>
+
+<a href="/contacts">
+  Go back
+</a>

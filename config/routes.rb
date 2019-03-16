@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Contact resource:
+
+  # CREATE
+  get("/contacts/new", { :controller => "contacts", :action => "new_form" })
+  post("/create_contact", { :controller => "contacts", :action => "create_row" })
+
+  # READ
+  get("/contacts", { :controller => "contacts", :action => "index" })
+  get("/contacts/:id_to_display", { :controller => "contacts", :action => "show" })
+
+  # UPDATE
+  get("/contacts/:prefill_with_id/edit", { :controller => "contacts", :action => "edit_form" })
+  post("/update_contact/:id_to_modify", { :controller => "contacts", :action => "update_row" })
+
+  # DELETE
+  get("/delete_contact/:id_to_remove", { :controller => "contacts", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Composition resource:
 
   # CREATE
