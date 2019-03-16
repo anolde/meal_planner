@@ -46,7 +46,7 @@ class ContactsController < ApplicationController
     @contact.first_name = params.fetch("first_name")
     @contact.last_name = params.fetch("last_name")
     @contact.email = params.fetch("email")
-    @contact.user_id = params.fetch("user_id")
+    
 
     if @contact.valid?
       @contact.save
