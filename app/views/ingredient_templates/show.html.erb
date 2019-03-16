@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link ingredient start -->
       <div class="col">
         <% if current_user == @ingredient.user %>
           <a href="/ingredients/<%= @ingredient.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link ingredient end -->
 
-      <!-- Delete link ingredient start -->
       <div class="col">
         <% if current_user == @ingredient.user %>
           <a href="/delete_ingredient/<%= @ingredient.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,23 +26,19 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link ingredient end -->
     </div>
 
     <dl>
       <dt>
         Name
       </dt>
-      <!-- Display name start -->
       <dd>
         <%= @ingredient.name %>
       </dd>
-      <!-- Display name end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @ingredient.user.present? %>
           <a href="/users/<%= @ingredient.user_id %>">
@@ -53,33 +46,26 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@ingredient.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@ingredient.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "ingredient_templates/ingredient_compositions" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

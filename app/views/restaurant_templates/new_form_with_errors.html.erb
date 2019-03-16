@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @restaurant.present? %>
   <% if @restaurant.errors.any? %>
     <% @restaurant.errors.full_messages.each do |message| %>
@@ -16,51 +15,33 @@
 
 <hr>
 
-<!-- Form restaurant start -->
 <form action="/create_restaurant" method="post">
-<!-- Form restaurant end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control" value="<%= @restaurant.name %>">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
-  <!-- Label and input for location start -->
   <div class="form-group">
     <label for="location">
       Location
     </label>
 
-    <!-- Input for location start -->
     <input type="text" id="location" name="location" class="form-control" value="<%= @restaurant.location %>">
-    <!-- Input for location end -->
   </div>
-  <!-- Label and input for location end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for "user_id" start -->
   <input type="hidden" name="user_id" value="<%= current_user.id %>">
-  <!-- Input for "user_id" end -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for menu_link start -->
   <div class="form-group">
     <label for="menu_link">
       Menu link
     </label>
 
-    <!-- Input for menu_link start -->
     <input type="text" id="menu_link" name="menu_link" class="form-control" value="<%= @restaurant.menu_link %>">
-    <!-- Input for menu_link end -->
   </div>
-  <!-- Label and input for menu_link end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create restaurant

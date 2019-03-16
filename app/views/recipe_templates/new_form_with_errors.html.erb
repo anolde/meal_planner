@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @recipe.present? %>
   <% if @recipe.errors.any? %>
     <% @recipe.errors.full_messages.each do |message| %>
@@ -16,51 +15,33 @@
 
 <hr>
 
-<!-- Form recipe start -->
 <form action="/create_recipe" method="post">
-<!-- Form recipe end -->
 
-  <!-- Label and input for title start -->
   <div class="form-group">
     <label for="title">
       Title
     </label>
 
-    <!-- Input for title start -->
     <input type="text" id="title" name="title" class="form-control" value="<%= @recipe.title %>">
-    <!-- Input for title end -->
   </div>
-  <!-- Label and input for title end -->
 
-  <!-- Label and input for instructions start -->
   <div class="form-group">
     <label for="instructions">
       Instructions
     </label>
 
-    <!-- Input for instructions start -->
     <input type="text" id="instructions" name="instructions" class="form-control" value="<%= @recipe.instructions %>">
-    <!-- Input for instructions end -->
   </div>
-  <!-- Label and input for instructions end -->
 
-  <!-- Label and input for calories_per_serving start -->
   <div class="form-group">
     <label for="calories_per_serving">
       Calories per serving
     </label>
 
-    <!-- Input for calories_per_serving start -->
     <input type="text" id="calories_per_serving" name="calories_per_serving" class="form-control" value="<%= @recipe.calories_per_serving %>">
-    <!-- Input for calories_per_serving end -->
   </div>
-  <!-- Label and input for calories_per_serving end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for "user_id" start -->
   <input type="hidden" name="user_id" value="<%= current_user.id %>">
-  <!-- Input for "user_id" end -->
-  <!-- Label and input for user_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create recipe

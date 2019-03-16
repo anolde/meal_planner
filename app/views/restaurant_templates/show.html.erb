@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link restaurant start -->
       <div class="col">
         <% if current_user == @restaurant.user %>
           <a href="/restaurants/<%= @restaurant.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link restaurant end -->
 
-      <!-- Delete link restaurant start -->
       <div class="col">
         <% if current_user == @restaurant.user %>
           <a href="/delete_restaurant/<%= @restaurant.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,34 +26,28 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link restaurant end -->
     </div>
 
     <dl>
       <dt>
         Name
       </dt>
-      <!-- Display name start -->
       <dd>
         <%= @restaurant.name %>
       </dd>
-      <!-- Display name end -->
 
       <dt>
         Location
       </dt>
-      <!-- Display location start -->
       <dd>
         <div>
           <%= render partial: "restaurant_templates/one_photo_map" %>
         </div>
       </dd>
-      <!-- Display location end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @restaurant.user.present? %>
           <a href="/users/<%= @restaurant.user_id %>">
@@ -64,37 +55,28 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Menu link
       </dt>
-      <!-- Display menu_link start -->
       <dd>
         <%= @restaurant.menu_link %>
       </dd>
-      <!-- Display menu_link end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@restaurant.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@restaurant.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

@@ -10,11 +10,9 @@
   <ul class="list-group list-group-flush">
     <% @user.contacts.each do |contact| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/contacts/<%= contact.id %>">
           <%= contact.first_name %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>

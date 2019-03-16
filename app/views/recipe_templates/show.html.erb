@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link recipe start -->
       <div class="col">
         <% if current_user == @recipe.user %>
           <a href="/recipes/<%= @recipe.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link recipe end -->
 
-      <!-- Delete link recipe start -->
       <div class="col">
         <% if current_user == @recipe.user %>
           <a href="/delete_recipe/<%= @recipe.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,41 +26,33 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link recipe end -->
     </div>
 
     <dl>
       <dt>
         Title
       </dt>
-      <!-- Display title start -->
       <dd>
         <%= @recipe.title %>
       </dd>
-      <!-- Display title end -->
 
       <dt>
         Instructions
       </dt>
-      <!-- Display instructions start -->
       <dd>
         <%= @recipe.instructions %>
       </dd>
-      <!-- Display instructions end -->
 
       <dt>
         Calories per serving
       </dt>
-      <!-- Display calories_per_serving start -->
       <dd>
         <%= @recipe.calories_per_serving %>
       </dd>
-      <!-- Display calories_per_serving end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @recipe.user.present? %>
           <a href="/users/<%= @recipe.user_id %>">
@@ -71,33 +60,26 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@recipe.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@recipe.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "recipe_templates/recipe_compositions" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

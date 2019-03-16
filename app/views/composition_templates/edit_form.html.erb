@@ -4,48 +4,32 @@
 
 <hr>
 
-<!-- Form composition start -->
 <form action="/update_composition/<%= @composition.id %>" method="post">
-<!-- Form composition end -->
 
-  <!-- Label and input for quantity start -->
   <div class="form-group">
     <label for="quantity">
       Quantity
     </label>
 
-    <!-- Input for quantity start -->
     <input type="text" id="quantity" name="quantity" class="form-control" value="<%= @composition.quantity %>">
-    <!-- Input for quantity end -->
   </div>
-  <!-- Label and input for quantity end -->
 
-  <!-- Label and input for recipe_id start -->
   <div class="form-group">
     <label for="recipe_id">
       Recipe
     </label>
 
-    <!-- Input for recipe_id start -->
     <%= select_tag(:recipe_id, options_from_collection_for_select(Recipe.all, :id, :title, @composition.recipe_id), :class => "form-control") %>
-    <!-- Input for recipe_id end -->
   </div>
-  <!-- Label and input for recipe_id end -->
 
-  <!-- Label and input for ingredient_id start -->
   <div class="form-group">
     <label for="ingredient_id">
       Ingredient
     </label>
 
-    <!-- Input for ingredient_id start -->
     <%= select_tag(:ingredient_id, options_from_collection_for_select(Ingredient.all, :id, :name, @composition.ingredient_id), :class => "form-control") %>
-    <!-- Input for ingredient_id end -->
   </div>
-  <!-- Label and input for ingredient_id end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Label and input for user_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update composition

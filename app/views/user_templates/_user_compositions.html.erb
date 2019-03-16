@@ -10,11 +10,9 @@
   <ul class="list-group list-group-flush">
     <% @user.compositions.each do |composition| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/compositions/<%= composition.id %>">
           <%= composition.quantity %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>

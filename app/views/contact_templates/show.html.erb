@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link contact start -->
       <div class="col">
         <% if current_user == @contact.user %>
           <a href="/contacts/<%= @contact.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link contact end -->
 
-      <!-- Delete link contact start -->
       <div class="col">
         <% if current_user == @contact.user %>
           <a href="/delete_contact/<%= @contact.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,41 +26,33 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link contact end -->
     </div>
 
     <dl>
       <dt>
         First name
       </dt>
-      <!-- Display first_name start -->
       <dd>
         <%= @contact.first_name %>
       </dd>
-      <!-- Display first_name end -->
 
       <dt>
         Last name
       </dt>
-      <!-- Display last_name start -->
       <dd>
         <%= @contact.last_name %>
       </dd>
-      <!-- Display last_name end -->
 
       <dt>
         Email
       </dt>
-      <!-- Display email start -->
       <dd>
         <%= @contact.email %>
       </dd>
-      <!-- Display email end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @contact.user.present? %>
           <a href="/users/<%= @contact.user_id %>">
@@ -71,28 +60,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@contact.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@contact.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

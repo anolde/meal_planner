@@ -4,48 +4,32 @@
 
 <hr>
 
-<!-- Form contact start -->
 <form action="/update_contact/<%= @contact.id %>" method="post">
-<!-- Form contact end -->
 
-  <!-- Label and input for first_name start -->
   <div class="form-group">
     <label for="first_name">
       First name
     </label>
 
-    <!-- Input for first_name start -->
     <input type="text" id="first_name" name="first_name" class="form-control" value="<%= @contact.first_name %>">
-    <!-- Input for first_name end -->
   </div>
-  <!-- Label and input for first_name end -->
 
-  <!-- Label and input for last_name start -->
   <div class="form-group">
     <label for="last_name">
       Last name
     </label>
 
-    <!-- Input for last_name start -->
     <input type="text" id="last_name" name="last_name" class="form-control" value="<%= @contact.last_name %>">
-    <!-- Input for last_name end -->
   </div>
-  <!-- Label and input for last_name end -->
 
-  <!-- Label and input for email start -->
   <div class="form-group">
     <label for="email">
       Email
     </label>
 
-    <!-- Input for email start -->
     <input type="text" id="email" name="email" class="form-control" value="<%= @contact.email %>">
-    <!-- Input for email end -->
   </div>
-  <!-- Label and input for email end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Label and input for user_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update contact

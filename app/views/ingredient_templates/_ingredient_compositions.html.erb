@@ -10,28 +10,22 @@
   <ul class="list-group list-group-flush">
     <% @ingredient.compositions.each do |composition| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/compositions/<%= composition.id %>">
           <%= composition.quantity %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <%if current_user == composition.user %>
           <a href="/delete_composition_from_ingredient/<%= composition.id %>">
             Delete
           </a>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="ingredient_compositions_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "ingredient_templates/ingredient_compositions_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

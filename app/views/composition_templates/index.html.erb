@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "composition_templates/compositions_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -62,19 +58,14 @@
 
       <% @compositions.each do |composition| %>
       <tr>
-        <!-- Display composition.id start -->
         <td>
           <%= composition.id %>
         </td>
-        <!-- Display composition.id end -->
 
-        <!-- Display composition.quantity start -->
         <td>
           <%= composition.quantity %>
         </td>
-        <!-- Display composition.quantity end -->
 
-        <!-- Display composition.recipe_id start -->
         <td>
           <% if composition.recipe.present? %>
             <a href="/recipes/<%= composition.recipe.id %>">
@@ -82,9 +73,7 @@
             </a>
           <% end %>
         </td>
-        <!-- Display composition.recipe_id end -->
 
-        <!-- Display composition.ingredient_id start -->
         <td>
           <% if composition.ingredient.present? %>
             <a href="/ingredients/<%= composition.ingredient.id %>">
@@ -92,9 +81,7 @@
             </a>
           <% end %>
         </td>
-        <!-- Display composition.ingredient_id end -->
 
-        <!-- Display composition.user_id start -->
         <td>
           <% if composition.user.present? %>
             <a href="/users/<%= composition.user.id %>">
@@ -102,19 +89,14 @@
             </a>
           <% end %>
         </td>
-        <!-- Display composition.user_id end -->
 
-        <!-- Display composition.created_at start -->
         <td>
           <%= time_ago_in_words(composition.created_at) %> ago
         </td>
-        <!-- Display composition.created_at end -->
 
-        <!-- Display composition.updated_at start -->
         <td>
           <%= time_ago_in_words(composition.updated_at) %> ago
         </td>
-        <!-- Display composition.updated_at end -->
 
         <td>
           <a href="/compositions/<%= composition.id %>">
