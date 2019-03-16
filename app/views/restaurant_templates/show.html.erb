@@ -47,7 +47,9 @@
       </dt>
       <!-- Display location start -->
       <dd>
-        <%= @restaurant.location %>
+        <div>
+          <%= render partial: "restaurant_templates/one_photo_map" %>
+        </div>
       </dd>
       <!-- Display location end -->
 
