@@ -1,4 +1,14 @@
 class CompositionsController < ApplicationController
+  before_action :current_user_must_be_composition_user, :only => [:edit_form, :update_row, :destroy_row]
+
+  def current_user_must_be_composition_user
+    composition = Composition.find(params["id_to_display"] || params["prefill_with_id"] || params["id_to_modify"] || params["id_to_remove"])
+
+    unless current_user == composition.user
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @compositions = Composition.all
 

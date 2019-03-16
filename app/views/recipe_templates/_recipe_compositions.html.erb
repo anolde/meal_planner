@@ -17,9 +17,11 @@
         <!-- Show link end -->
 
         <!-- Delete link start -->
-        <a href="/delete_composition_from_recipe/<%= composition.id %>">
-          Delete
-        </a>
+        <%if current_user == composition.user %>
+          <a href="/delete_composition_from_recipe/<%= composition.id %>">
+            Delete
+          </a>
+        <% end %>
         <!-- Delete link end -->
 
       </li>

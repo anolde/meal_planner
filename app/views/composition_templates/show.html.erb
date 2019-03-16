@@ -13,17 +13,21 @@
 
       <!-- Edit link composition start -->
       <div class="col">
-        <a href="/compositions/<%= @composition.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit composition
-        </a>
+        <% if current_user == @composition.user %>
+          <a href="/compositions/<%= @composition.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit composition
+          </a>
+        <% end %>
       </div>
       <!-- Edit link composition end -->
 
       <!-- Delete link composition start -->
       <div class="col">
-        <a href="/delete_composition/<%= @composition.id %>" class="btn btn-block btn-outline-secondary">
-          Delete composition
-        </a>
+        <% if current_user == @composition.user %>
+          <a href="/delete_composition/<%= @composition.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete composition
+          </a>
+        <% end %>
       </div>
       <!-- Delete link composition end -->
     </div>
