@@ -13,17 +13,21 @@
 
       <!-- Edit link recipe start -->
       <div class="col">
-        <a href="/recipes/<%= @recipe.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit recipe
-        </a>
+        <% if current_user == @recipe.user %>
+          <a href="/recipes/<%= @recipe.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit recipe
+          </a>
+        <% end %>
       </div>
       <!-- Edit link recipe end -->
 
       <!-- Delete link recipe start -->
       <div class="col">
-        <a href="/delete_recipe/<%= @recipe.id %>" class="btn btn-block btn-outline-secondary">
-          Delete recipe
-        </a>
+        <% if current_user == @recipe.user %>
+          <a href="/delete_recipe/<%= @recipe.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete recipe
+          </a>
+        <% end %>
       </div>
       <!-- Delete link recipe end -->
     </div>
