@@ -47,7 +47,7 @@ class RecipesController < ApplicationController
     @recipe.title = params.fetch("title")
     @recipe.instructions = params.fetch("instructions")
     @recipe.calories_per_serving = params.fetch("calories_per_serving")
-    @recipe.user_id = params.fetch("user_id")
+    
 
     if @recipe.valid?
       @recipe.save
