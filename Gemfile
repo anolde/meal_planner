@@ -53,3 +53,4 @@ gem 'web_git', github: 'firstdraft/web_git'
 gem 'activeadmin', '1.2.1'
 gem 'gmaps4rails'
 gem 'underscore-rails'
+gem "rollbar"
