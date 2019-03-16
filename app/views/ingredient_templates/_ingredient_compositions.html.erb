@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Compositions
+
+    <a data-toggle="collapse" href="#ingredient_compositions_new_form">
+      Add composition
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @ingredient.compositions.each do |composition| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/compositions/<%= composition.id %>">
+          <%= composition.quantity %>
+        </a>
+        <!-- Show link end -->
+
+        <!-- Delete link start -->
+        <a href="/delete_composition_from_ingredient/<%= composition.id %>">
+          Delete
+        </a>
+        <!-- Delete link end -->
+
+      </li>
+    <% end %>
+
+    <div class="card-footer">
+      <div class="collapse" id="ingredient_compositions_new_form">
+        <!-- New associationcollection form start -->
+
+        <!-- New associationcollection form end -->
+      </div>
+    </div>
+
+  </ul>
+</div>

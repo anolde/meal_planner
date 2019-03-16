@@ -57,6 +57,30 @@ class CompositionsController < ApplicationController
     end
   end
 
+  def destroy_row_from_recipe
+    @composition = Composition.find(params.fetch("id_to_remove"))
+
+    @composition.destroy
+
+    redirect_to("/recipes/#{@composition.recipe_id}", notice: "Composition deleted successfully.")
+  end
+
+  def destroy_row_from_ingredient
+    @composition = Composition.find(params.fetch("id_to_remove"))
+
+    @composition.destroy
+
+    redirect_to("/ingredients/#{@composition.ingredient_id}", notice: "Composition deleted successfully.")
+  end
+
+  def destroy_row_from_user
+    @composition = Composition.find(params.fetch("id_to_remove"))
+
+    @composition.destroy
+
+    redirect_to("/users/#{@composition.user_id}", notice: "Composition deleted successfully.")
+  end
+
   def destroy_row
     @composition = Composition.find(params.fetch("id_to_remove"))
 

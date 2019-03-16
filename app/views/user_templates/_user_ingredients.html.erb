@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Ingredients
+
+    <a data-toggle="collapse" href="#user_ingredients_new_form">
+      Add ingredient
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.ingredients.each do |ingredient| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/ingredients/<%= ingredient.id %>">
+          <%= ingredient.name %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

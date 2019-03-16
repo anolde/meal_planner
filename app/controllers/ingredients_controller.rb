@@ -53,6 +53,14 @@ class IngredientsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @ingredient = Ingredient.find(params.fetch("id_to_remove"))
+
+    @ingredient.destroy
+
+    redirect_to("/users/#{@ingredient.user_id}", notice: "Ingredient deleted successfully.")
+  end
+
   def destroy_row
     @ingredient = Ingredient.find(params.fetch("id_to_remove"))
 

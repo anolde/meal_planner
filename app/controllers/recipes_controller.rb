@@ -57,6 +57,14 @@ class RecipesController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @recipe = Recipe.find(params.fetch("id_to_remove"))
+
+    @recipe.destroy
+
+    redirect_to("/users/#{@recipe.user_id}", notice: "Recipe deleted successfully.")
+  end
+
   def destroy_row
     @recipe = Recipe.find(params.fetch("id_to_remove"))
 

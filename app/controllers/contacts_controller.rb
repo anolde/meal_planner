@@ -57,6 +57,14 @@ class ContactsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @contact = Contact.find(params.fetch("id_to_remove"))
+
+    @contact.destroy
+
+    redirect_to("/users/#{@contact.user_id}", notice: "Contact deleted successfully.")
+  end
+
   def destroy_row
     @contact = Contact.find(params.fetch("id_to_remove"))
 
