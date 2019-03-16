@@ -1,0 +1,68 @@
+<h1>
+  Edit restaurant #<%= @restaurant.id %>
+</h1>
+
+<hr>
+
+<!-- Form restaurant start -->
+<form action="/update_restaurant/<%= @restaurant.id %>" method="post">
+<!-- Form restaurant end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @restaurant.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for location start -->
+  <div class="form-group">
+    <label for="location">
+      Location
+    </label>
+
+    <!-- Input for location start -->
+    <input type="text" id="location" name="location" class="form-control" value="<%= @restaurant.location %>">
+    <!-- Input for location end -->
+  </div>
+  <!-- Label and input for location end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @restaurant.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for menu_link start -->
+  <div class="form-group">
+    <label for="menu_link">
+      Menu link
+    </label>
+
+    <!-- Input for menu_link start -->
+    <input type="text" id="menu_link" name="menu_link" class="form-control" value="<%= @restaurant.menu_link %>">
+    <!-- Input for menu_link end -->
+  </div>
+  <!-- Label and input for menu_link end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update restaurant
+  </button>
+</form>
+
+<hr>
+
+<a href="/restaurants">
+  Go back
+</a>
