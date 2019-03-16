@@ -1,5 +1,5 @@
 class ContactsController < ApplicationController
-  before_action :current_user_must_be_contact_user, :only => [:edit_form, :update_row, :destroy_row]
+  before_action :current_user_must_be_contact_user, :only => [:show, :edit_form, :update_row, :destroy_row]
 
   def current_user_must_be_contact_user
     contact = Contact.find(params["id_to_display"] || params["prefill_with_id"] || params["id_to_modify"] || params["id_to_remove"])
