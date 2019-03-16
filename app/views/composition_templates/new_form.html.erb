@@ -40,7 +40,7 @@
     </label>
 
     <!-- Input for ingredient_id start -->
-    <input type="text" id="ingredient_id" name="ingredient_id" class="form-control">
+    <%= select_tag(:ingredient_id, options_from_collection_for_select(Ingredient.all, :id, :name, @composition.ingredient_id), :class => "form-control") %>
     <!-- Input for ingredient_id end -->
   </div>
   <!-- Label and input for ingredient_id end -->
