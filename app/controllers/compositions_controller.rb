@@ -34,6 +34,40 @@ class CompositionsController < ApplicationController
     end
   end
 
+  def create_row_from_recipe
+    @composition = Composition.new
+
+    @composition.quantity = params.fetch("quantity")
+    @composition.recipe_id = params.fetch("recipe_id")
+    @composition.ingredient_id = params.fetch("ingredient_id")
+    @composition.user_id = params.fetch("user_id")
+
+    if @composition.valid?
+      @composition.save
+
+      redirect_to("/recipes/#{@composition.recipe_id}", notice: "Composition created successfully.")
+    else
+      render("composition_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_ingredient
+    @composition = Composition.new
+
+    @composition.quantity = params.fetch("quantity")
+    @composition.recipe_id = params.fetch("recipe_id")
+    @composition.ingredient_id = params.fetch("ingredient_id")
+    @composition.user_id = params.fetch("user_id")
+
+    if @composition.valid?
+      @composition.save
+
+      redirect_to("/ingredients/#{@composition.ingredient_id}", notice: "Composition created successfully.")
+    else
+      render("composition_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @composition = Composition.find(params.fetch("prefill_with_id"))
 

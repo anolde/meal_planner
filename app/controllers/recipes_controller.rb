@@ -6,6 +6,7 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @composition = Composition.new
     @recipe = Recipe.find(params.fetch("id_to_display"))
 
     render("recipe_templates/show.html.erb")
