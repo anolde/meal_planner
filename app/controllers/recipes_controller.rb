@@ -10,7 +10,7 @@ class RecipesController < ApplicationController
   end
 
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.page(params[:page]).per(10)
 
     render("recipe_templates/index.html.erb")
   end

@@ -10,7 +10,7 @@ class CompositionsController < ApplicationController
   end
 
   def index
-    @compositions = Composition.all
+    @compositions = Composition.page(params[:page]).per(10)
 
     render("composition_templates/index.html.erb")
   end
