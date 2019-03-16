@@ -1,0 +1,91 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Composition #<%= @composition.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/compositions" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link composition start -->
+      <div class="col">
+        <a href="/compositions/<%= @composition.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit composition
+        </a>
+      </div>
+      <!-- Edit link composition end -->
+
+      <!-- Delete link composition start -->
+      <div class="col">
+        <a href="/delete_composition/<%= @composition.id %>" class="btn btn-block btn-outline-secondary">
+          Delete composition
+        </a>
+      </div>
+      <!-- Delete link composition end -->
+    </div>
+
+    <dl>
+      <dt>
+        Quantity
+      </dt>
+      <!-- Display quantity start -->
+      <dd>
+        <%= @composition.quantity %>
+      </dd>
+      <!-- Display quantity end -->
+
+      <dt>
+        Recipe
+      </dt>
+      <!-- Display recipe_id start -->
+      <dd>
+        <%= @composition.recipe_id %>
+      </dd>
+      <!-- Display recipe_id end -->
+
+      <dt>
+        Ingredient
+      </dt>
+      <!-- Display ingredient_id start -->
+      <dd>
+        <%= @composition.ingredient_id %>
+      </dd>
+      <!-- Display ingredient_id end -->
+
+      <dt>
+        User
+      </dt>
+      <!-- Display user_id start -->
+      <dd>
+        <%= @composition.user_id %>
+      </dd>
+      <!-- Display user_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@composition.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@composition.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

@@ -1,0 +1,80 @@
+<!-- Validation failure messages -->
+<% if @composition.present? %>
+  <% if @composition.errors.any? %>
+    <% @composition.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new composition
+</h1>
+
+
+<hr>
+
+<!-- Form composition start -->
+<form action="/create_composition" method="post">
+<!-- Form composition end -->
+
+  <!-- Label and input for quantity start -->
+  <div class="form-group">
+    <label for="quantity">
+      Quantity
+    </label>
+
+    <!-- Input for quantity start -->
+    <input type="text" id="quantity" name="quantity" class="form-control" value="<%= @composition.quantity %>">
+    <!-- Input for quantity end -->
+  </div>
+  <!-- Label and input for quantity end -->
+
+  <!-- Label and input for recipe_id start -->
+  <div class="form-group">
+    <label for="recipe_id">
+      Recipe
+    </label>
+
+    <!-- Input for recipe_id start -->
+    <input type="text" id="recipe_id" name="recipe_id" class="form-control" value="<%= @composition.recipe_id %>">
+    <!-- Input for recipe_id end -->
+  </div>
+  <!-- Label and input for recipe_id end -->
+
+  <!-- Label and input for ingredient_id start -->
+  <div class="form-group">
+    <label for="ingredient_id">
+      Ingredient
+    </label>
+
+    <!-- Input for ingredient_id start -->
+    <input type="text" id="ingredient_id" name="ingredient_id" class="form-control" value="<%= @composition.ingredient_id %>">
+    <!-- Input for ingredient_id end -->
+  </div>
+  <!-- Label and input for ingredient_id end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @composition.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create composition
+  </button>
+</form>
+
+<hr>
+
+<a href="/compositions">
+  Go back
+</a>

@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Composition resource:
+
+  # CREATE
+  get("/compositions/new", { :controller => "compositions", :action => "new_form" })
+  post("/create_composition", { :controller => "compositions", :action => "create_row" })
+
+  # READ
+  get("/compositions", { :controller => "compositions", :action => "index" })
+  get("/compositions/:id_to_display", { :controller => "compositions", :action => "show" })
+
+  # UPDATE
+  get("/compositions/:prefill_with_id/edit", { :controller => "compositions", :action => "edit_form" })
+  post("/update_composition/:id_to_modify", { :controller => "compositions", :action => "update_row" })
+
+  # DELETE
+  get("/delete_composition/:id_to_remove", { :controller => "compositions", :action => "destroy_row" })
+
+  #------------------------------
+
   devise_for :users
   # Routes for the User resource:
 
