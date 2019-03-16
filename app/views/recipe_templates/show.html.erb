@@ -65,7 +65,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @recipe.user_id %>
+        <% if @recipe.user.present? %>
+          <a href="/users/<%= @recipe.user_id %>">
+            <%= @recipe.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 

@@ -47,7 +47,11 @@
       </dt>
       <!-- Display recipe_id start -->
       <dd>
-        <%= @composition.recipe_id %>
+        <% if @composition.recipe.present? %>
+          <a href="/recipes/<%= @composition.recipe_id %>">
+            <%= @composition.recipe.title %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display recipe_id end -->
 
@@ -56,7 +60,11 @@
       </dt>
       <!-- Display ingredient_id start -->
       <dd>
-        <%= @composition.ingredient_id %>
+        <% if @composition.ingredient.present? %>
+          <a href="/ingredients/<%= @composition.ingredient_id %>">
+            <%= @composition.ingredient.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display ingredient_id end -->
 
@@ -65,7 +73,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @composition.user_id %>
+        <% if @composition.user.present? %>
+          <a href="/users/<%= @composition.user_id %>">
+            <%= @composition.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 

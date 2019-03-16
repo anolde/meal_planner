@@ -82,7 +82,11 @@
 
         <!-- Display restaurant.user_id start -->
         <td>
-          <%= restaurant.user.email %>
+          <% if restaurant.user.present? %>
+            <a href="/users/<%= restaurant.user.id %>">
+              <%= restaurant.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display restaurant.user_id end -->
 

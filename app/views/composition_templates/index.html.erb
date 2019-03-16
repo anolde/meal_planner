@@ -72,19 +72,31 @@
 
         <!-- Display composition.recipe_id start -->
         <td>
-          <%= composition.recipe.title %>
+          <% if composition.recipe.present? %>
+            <a href="/recipes/<%= composition.recipe.id %>">
+              <%= composition.recipe.title %>
+            </a>
+          <% end %>
         </td>
         <!-- Display composition.recipe_id end -->
 
         <!-- Display composition.ingredient_id start -->
         <td>
-          <%= composition.ingredient.name %>
+          <% if composition.ingredient.present? %>
+            <a href="/ingredients/<%= composition.ingredient.id %>">
+              <%= composition.ingredient.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display composition.ingredient_id end -->
 
         <!-- Display composition.user_id start -->
         <td>
-          <%= composition.user.email %>
+          <% if composition.user.present? %>
+            <a href="/users/<%= composition.user.id %>">
+              <%= composition.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display composition.user_id end -->
 

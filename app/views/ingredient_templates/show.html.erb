@@ -47,7 +47,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @ingredient.user_id %>
+        <% if @ingredient.user.present? %>
+          <a href="/users/<%= @ingredient.user_id %>">
+            <%= @ingredient.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 

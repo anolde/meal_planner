@@ -84,7 +84,11 @@
 
         <!-- Display recipe.user_id start -->
         <td>
-          <%= recipe.user.email %>
+          <% if recipe.user.present? %>
+            <a href="/users/<%= recipe.user.id %>">
+              <%= recipe.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display recipe.user_id end -->
 
