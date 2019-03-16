@@ -1,0 +1,112 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All recipes
+    </h1>
+
+    <a href="/recipes/new" class="btn btn-block btn-outline-secondary">
+      Add a new recipe
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Title
+        </th>
+
+        <th>
+          Instructions
+        </th>
+
+        <th>
+          Calories per serving
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @recipes.each do |recipe| %>
+      <tr>
+        <!-- Display recipe.id start -->
+        <td>
+          <%= recipe.id %>
+        </td>
+        <!-- Display recipe.id end -->
+
+        <!-- Display recipe.title start -->
+        <td>
+          <%= recipe.title %>
+        </td>
+        <!-- Display recipe.title end -->
+
+        <!-- Display recipe.instructions start -->
+        <td>
+          <%= recipe.instructions %>
+        </td>
+        <!-- Display recipe.instructions end -->
+
+        <!-- Display recipe.calories_per_serving start -->
+        <td>
+          <%= recipe.calories_per_serving %>
+        </td>
+        <!-- Display recipe.calories_per_serving end -->
+
+        <!-- Display recipe.user_id start -->
+        <td>
+          <%= recipe.user_id %>
+        </td>
+        <!-- Display recipe.user_id end -->
+
+        <!-- Display recipe.created_at start -->
+        <td>
+          <%= time_ago_in_words(recipe.created_at) %> ago
+        </td>
+        <!-- Display recipe.created_at end -->
+
+        <!-- Display recipe.updated_at start -->
+        <td>
+          <%= time_ago_in_words(recipe.updated_at) %> ago
+        </td>
+        <!-- Display recipe.updated_at end -->
+
+        <td>
+          <a href="/recipes/<%= recipe.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
