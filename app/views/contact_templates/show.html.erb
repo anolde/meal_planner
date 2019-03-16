@@ -13,17 +13,21 @@
 
       <!-- Edit link contact start -->
       <div class="col">
-        <a href="/contacts/<%= @contact.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit contact
-        </a>
+        <% if current_user == @contact.user %>
+          <a href="/contacts/<%= @contact.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit contact
+          </a>
+        <% end %>
       </div>
       <!-- Edit link contact end -->
 
       <!-- Delete link contact start -->
       <div class="col">
-        <a href="/delete_contact/<%= @contact.id %>" class="btn btn-block btn-outline-secondary">
-          Delete contact
-        </a>
+        <% if current_user == @contact.user %>
+          <a href="/delete_contact/<%= @contact.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete contact
+          </a>
+        <% end %>
       </div>
       <!-- Delete link contact end -->
     </div>
