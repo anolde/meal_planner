@@ -80,7 +80,7 @@ class CompositionsController < ApplicationController
     @composition.quantity = params.fetch("quantity")
     @composition.recipe_id = params.fetch("recipe_id")
     @composition.ingredient_id = params.fetch("ingredient_id")
-    @composition.user_id = params.fetch("user_id")
+    
 
     if @composition.valid?
       @composition.save
