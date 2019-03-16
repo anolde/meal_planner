@@ -1,0 +1,44 @@
+<h1>
+  Edit ingredient #<%= @ingredient.id %>
+</h1>
+
+<hr>
+
+<!-- Form ingredient start -->
+<form action="/update_ingredient/<%= @ingredient.id %>" method="post">
+<!-- Form ingredient end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @ingredient.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @ingredient.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update ingredient
+  </button>
+</form>
+
+<hr>
+
+<a href="/ingredients">
+  Go back
+</a>
