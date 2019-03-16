@@ -10,7 +10,7 @@ class ContactsController < ApplicationController
   end
 
   def index
-    @contacts = Contact.all
+    @contacts = current_user.contacts.page(params[:page]).per(10)
 
     render("contact_templates/index.html.erb")
   end
