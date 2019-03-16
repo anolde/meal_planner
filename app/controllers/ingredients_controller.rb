@@ -43,7 +43,7 @@ class IngredientsController < ApplicationController
     @ingredient = Ingredient.find(params.fetch("id_to_modify"))
 
     @ingredient.name = params.fetch("name")
-    @ingredient.user_id = params.fetch("user_id")
+    
 
     if @ingredient.valid?
       @ingredient.save
